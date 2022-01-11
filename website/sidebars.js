@@ -1,4 +1,3 @@
-
 /**
  * Creating a sidebar enables you to:
  - create an ordered group of docs
@@ -14,10 +13,42 @@ module.exports = {
     documentation: [
         'user_guide/index',
         {
-            'Tutorials': [            'user_guide/index'],
-            'Reference documentation': [            'user_guide/index'],
+            Tutorials: [],
+            'Reference documentation': [
+                {
+                    type: 'category',
+                    link: { type: 'doc', id: 'addons/index' },
+                    items: [
+                        'addons/webhook',
+                        'addons/slack',
+                        'addons/teams',
+                        'addons/datadog',
+                    ],
+                    label: 'Addons',
+                },
+                {
+                    'Admin API': [
+                        'api/admin/features',
+                        'api/admin/projects',
+                        'api/admin/feature-toggles-v2',
+                        'api/admin/features-archive',
+                        'api/admin/strategies',
+                        'api/admin/metrics',
+                        'api/admin/events',
+                        'api/admin/state',
+                        'api/admin/feature-types',
+                        'api/admin/addons',
+                        'api/admin/context',
+                        'api/admin/user-admin',
+                    ],
+                    'Client SDK API': [
+                        'api/client/features',
+                        'api/client/register',
+                        'api/client/metrics',
+                    ],
+                },
+            ],
             'Getting started': [
-                'user_guide/index',
                 'user_guide/quickstart',
                 'user_guide/important-concepts',
                 'user_guide/v4-whats-new',
@@ -46,14 +77,11 @@ module.exports = {
                 'sdks/proxy-javascript',
                 'sdks/proxy-react',
                 'sdks/proxy-ios',
-                { label: 'Community SDKs', type: 'link', href: '/sdks#community-sdks'}
-            ],
-            Addons: [
-                'addons/index',
-                'addons/webhook',
-                'addons/slack',
-                'addons/teams',
-                'addons/datadog',
+                {
+                    label: 'Community SDKs',
+                    type: 'link',
+                    href: '/sdks#community-sdks',
+                },
             ],
             Advanced: [
                 'advanced/strategy_constraints',
@@ -71,15 +99,13 @@ module.exports = {
                 'advanced/sso-saml-keycloak',
                 'advanced/sso-google',
             ],
-            'Topic guides': [
-                'topics/a-b-testing'
+            'Topic guides': ['topics/a-b-testing'],
+            'How-to guides': [
+                'how-to/how-to-add-strategy-constraints',
+                'how-to/how-to-define-custom-context-fields',
+                'how-to/how-to-use-custom-strategies',
             ],
-            "How-to guides": [
-                "how-to/how-to-add-strategy-constraints",
-                "how-to/how-to-define-custom-context-fields",
-                "how-to/how-to-use-custom-strategies",
-            ]
-        }
+        },
     ],
     api: {
         Introduction: [
@@ -87,25 +113,6 @@ module.exports = {
             'api/internal/internal',
             'api/internal/health',
             'api/open_api',
-        ],
-        'Admin API': [
-            'api/admin/features',
-            'api/admin/projects',
-            'api/admin/feature-toggles-v2',
-            'api/admin/features-archive',
-            'api/admin/strategies',
-            'api/admin/metrics',
-            'api/admin/events',
-            'api/admin/state',
-            'api/admin/feature-types',
-            'api/admin/addons',
-            'api/admin/context',
-            'api/admin/user-admin',
-        ],
-        'Client SDK API': [
-            'api/client/features',
-            'api/client/register',
-            'api/client/metrics',
         ],
     },
     'Deploy and manage': {
@@ -126,6 +133,6 @@ module.exports = {
         'Jira server': [
             'integrations/jira_server_plugin_installation',
             'integrations/jira_server_plugin_usage',
-        ]
+        ],
     },
 };
